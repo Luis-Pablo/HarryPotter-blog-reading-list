@@ -15,12 +15,12 @@ const Characters = () => {
 
     useEffect(() => {
         obtenerPersonajes();
-        console.log(personajes);
+        
     }, [])
     
     return (
         <div>
-            <div>
+            <div className="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5">
                 {personajes ?
                     personajes.map((personaje) => (
                         <div className='col-md-12'>
