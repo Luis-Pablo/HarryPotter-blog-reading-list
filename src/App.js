@@ -1,22 +1,21 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Details from './views/detail';
+import Home from './views/home';
 import Navbar from './components/navbar';
-import Hero from './components/hero';
-import Card from './components/card';
-import CardHouse from './components/house';
-import Characters from './components/characters';
 function App() {
   return (
-    <div className="App">
-
+    <div>
+    <BrowserRouter>
       <Navbar />
-      <Hero />
-      <h1>hola</h1>
-      <Card />
-      <CardHouse />
-      <Characters />
-    </div>
+      <Routes>
+        <Route path = "/" element = {<Home/>}/>
+        <Route path = "/description/:id" element = {<Details/>}/>
+
+      </Routes>
+    </BrowserRouter>
+   </div>
+
   );
 }
 
